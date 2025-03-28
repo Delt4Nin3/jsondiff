@@ -2,11 +2,11 @@
 name = "jsondiff"
 description = "A tool for outputs semantic difference of json"
 readme = "readme.md"
-version = "0.1.0"
-authors = ["niboshi(mpppk)"]
-edition = "2018"
+version = "0.2.0"
+authors = ["niboshi(mpppk)", "Delt4Nin3"]
+edition = "2024"
 license = "MIT"
-repository = "https://github.com/mpppk/jsondiff"
+repository = "https://github.com/Delt4Nin3/jsondiff"
 categories = ["command-line-utilities", "development-tools"]
 keywords = ["cli", "json"]
 
@@ -19,8 +19,8 @@ name = "jsondiff"
 path = "src/bin.rs"
 
 [dependencies]
-structopt = "0.3"
-serde_json = "1.0"
-similar = "1.3.0"
 anyhow = "1.0"
-colored = "2"
+clap = { version = "4.0", features = ["derive"] }
+colored = "3"
+serde_json = "1.0"
+similar = "2.7.0"

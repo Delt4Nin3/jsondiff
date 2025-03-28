@@ -2,18 +2,18 @@ use anyhow::Result;
 use jsondiff::{diff, open_file};
 use serde_json::Value;
 use std::path::PathBuf;
-use structopt::StructOpt;
+use clap::Parser;
 
 /// A tool for outputs semantic difference of json
-#[derive(StructOpt, Debug)]
-#[structopt(name = "jsondiff")]
+#[derive(Parser, Debug)]
+#[command(name = "jsondiff")]
 struct Opt {
     /// Generate diffs with <n> lines of context
-    #[structopt(short = "U", default_value = "3")]
+    #[arg(short = 'U', default_value = "3")]
     unified: usize,
 
     /// Outputs normalized json as "normalized1.json" and "normalized2.json"
-    #[structopt(long = "output-normalized-json", short = "n")]
+    #[arg(long = "output-normalized-json", short = 'n')]
     output_normalized_json: bool,
 
     file_path1: PathBuf,
@@ -21,7 +21,7 @@ struct Opt {
 }
 
 fn main() -> Result<()> {
-    let opt = Opt::from_args();
+    let opt = Opt::parse();
 
     let file1 = open_file(opt.file_path1)?;
     let file2 = open_file(opt.file_path2)?;
