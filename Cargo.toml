@@ -2,7 +2,7 @@
 name = "jsondiff"
 description = "A tool for outputs semantic difference of json"
 readme = "readme.md"
-version = "0.2.0"
+version = "0.2.1"
 authors = ["niboshi(mpppk)", "Delt4Nin3"]
 edition = "2024"
 license = "MIT"
