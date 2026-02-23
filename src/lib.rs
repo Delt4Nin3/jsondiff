@@ -211,7 +211,7 @@ fn generate_array_key(v: &Value) -> String {
         Value::Object(obj) => obj
             .iter()
             .fold(String::new(), |s, (k, v)| format!("{}/{}:{}", s, k, v)),
-    };
+    }
 }
 
 /// Normalize json value
