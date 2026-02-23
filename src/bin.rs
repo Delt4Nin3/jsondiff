@@ -1,8 +1,8 @@
 use anyhow::Result;
+use clap::Parser;
 use jsondiff::{diff, open_file};
 use serde_json::Value;
 use std::path::PathBuf;
-use clap::Parser;
 
 /// A tool for outputs semantic difference of json
 #[derive(Parser, Debug)]
