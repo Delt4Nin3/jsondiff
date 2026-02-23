@@ -234,8 +234,7 @@ pub fn normalize_value(v: Value, normalize_array: bool) -> Value {
                     m.insert(key, normalized_v);
                     m
                 })
-                .into_iter()
-                .map(|(_k, v)| v)
+                .into_values()
                 .collect();
             Value::from(new_v)
         }
