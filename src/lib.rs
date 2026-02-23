@@ -194,7 +194,7 @@ pub fn diff(v1: Value, v2: Value, unified: usize, output_normalized_json: bool) 
 }
 
 fn generate_array_key(v: &Value) -> String {
-    return match v {
+    match v {
         Value::Null => "__null__".to_string(),
         Value::Bool(bool_v) => {
             if *bool_v {
